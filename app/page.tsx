@@ -2,40 +2,13 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Star, Code, Users, BookOpen, Heart, ArrowRight } from "lucide-react"
+import { Header } from "@/components/layout/Header"
+import { Footer } from "@/components/layout/Footer"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-green-50 font-light antialiased">
-      {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Image src="/codewp-logo.png" alt="CodeWithPurpose Logo" width={32} height={32} className="w-8 h-8" />
-              <span className="text-xl font-medium text-gray-800 tracking-tight">CodeWithPurpose</span>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/programs" className="text-gray-700 hover:text-gray-700 transition-colors font-light">
-                Programs
-              </Link>
-              <Link href="/about" className="text-gray-700 hover:text-gray-700 transition-colors font-light">
-                About
-              </Link>
-              <Link href="#impact" className="text-gray-700 hover:text-gray-700 transition-colors font-light">
-                Impact
-              </Link>
-              <Link href="/contact" className="text-gray-700 hover:text-gray-700 transition-colors font-light">
-                Contact
-              </Link>
-            </div>
-
-            <Button className="bg-green-800 hover:bg-green-900 text-white font-light" asChild>
-              <Link href="/programs">Join Our Mission</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="py-12 lg:py-20">
@@ -51,13 +24,11 @@ export default function HomePage() {
                 </div>
 
                 <h1 className="text-4xl lg:text-5xl font-light mb-6 leading-tight tracking-tight">
-                  Hey there! Ready to learn coding while making your community stronger?
+                  Learn to code for free and make a difference.
                 </h1>
 
                 <p className="text-xl mb-8 text-green-200 leading-relaxed font-light">
-                  Here's the thing - we're not your typical coding bootcamp. Every course you take helps fund local
-                  charities. We believe learning should create ripples of positive change that extend far beyond your
-                  laptop screen.
+                  Welcome to CodeWithPurpose, where education is free and every donation directly supports local charities. Join us to build your coding skills and empower your community.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4">
@@ -124,8 +95,7 @@ export default function HomePage() {
               Ready to make a difference through code?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-              Let's be honest - every enrollment helps fund local charities while you build the skills that will shape
-              your future. It's learning with purpose, literally.
+             Our courses are completely free. All we ask for is a donation to one of our partner charities to help support our community.
             </p>
           </div>
 
@@ -154,9 +124,7 @@ export default function HomePage() {
                 </h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed font-light">
-                  Never coded before? No worries! This course takes you from "What's Python?" to building your first
-                  real projects. We'll walk through everything step-by-step, and honestly, you'll be amazed at what you
-                  can create.
+                 This course is free. Start your coding journey with Python and build real projects. Your donation will help support local charities.
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -183,7 +151,7 @@ export default function HomePage() {
                     href="https://www.udemy.com/course/introduction-to-python-bootcamp/?kw=Introduction+To+Python+for+Complete+Beginners%21&src=sac"
                     target="_blank"
                   >
-                    Enroll Now on Udemy
+                    Donate and Enroll
                   </Link>
                 </Button>
               </div>
@@ -211,9 +179,7 @@ export default function HomePage() {
                 <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">Vibecoding 101</h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed font-light">
-                  Who says coding has to be boring? This course brings creativity and personality to programming. You'll
-                  learn modern development while building projects that actually reflect who you are. It's coding with
-                  personality.
+                  This course is free. Bring creativity to your coding and build projects with personality. Your donation will help support local charities.
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -237,7 +203,7 @@ export default function HomePage() {
 
                 <Button className="w-full bg-green-800 hover:bg-green-900 text-white font-light" asChild>
                   <Link href="https://www.udemy.com/course/vibecoding-101/?kw=Vibecoding+101&src=sac" target="_blank">
-                    Enroll Now on Udemy
+                    Donate and Enroll
                   </Link>
                 </Button>
               </div>
@@ -248,10 +214,8 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4 font-light">
               Both courses include lifetime access, community support, and the warm feeling of making a difference
             </p>
-            <Button variant="outline" className="border-green-700 text-green-700 hover:bg-green-50 font-light" asChild>
-              <Link href="/programs">
-                View All Programs <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
+            <Button variant="outline" className="bg-transparent border-green-700 text-green-700 hover:bg-green-50 hover:text-green-800 font-light" asChild>
+              <Link href="/programs">View All Learning Paths</Link>
             </Button>
           </div>
         </div>
@@ -333,108 +297,82 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-12">
+      {/* How It Works */}
+      <section id="impact" className="py-16 lg:py-24 bg-green-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Image src="/codewp-logo.png" alt="CodeWithPurpose Logo" width={24} height={24} className="w-6 h-6" />
-                <span className="text-lg font-medium tracking-tight">CodeWithPurpose</span>
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-light mb-4">
+              <Heart className="w-4 h-4" />
+              <span>Our Model</span>
+            </div>
+            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+              Learn, Grow, and Give Back
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
+              Our unique approach combines education with charitable giving, creating a powerful cycle of community support.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
+                <BookOpen className="w-8 h-8 text-green-700" />
               </div>
-              <p className="text-gray-400 font-light">
-                Where learning meets giving. Every course creates ripples of positive change.
+              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">1. Access Free Courses</h3>
+              <p className="text-gray-600 font-light">
+                Our coding courses are available to everyone at no cost.
               </p>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Learn</h4>
-              <ul className="space-y-2 text-gray-400 font-light">
-                <li>
-                  <Link href="/programs" className="hover:text-white transition-colors">
-                    All Programs
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Python Course
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Vibecoding 101
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Student Stories
-                  </Link>
-                </li>
-              </ul>
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
+                <Heart className="w-8 h-8 text-red-500" />
+              </div>
+              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">2. Donate to Charities</h3>
+              <p className="text-gray-600 font-light">
+                Your donations directly fund local charities and support our mission.
+              </p>
             </div>
 
-            <div>
-              <h4 className="font-medium mb-4">Community</h4>
-              <ul className="space-y-2 text-gray-400 font-light">
-                <li>
-                  <Link href="/about" className="hover:text-white transition-colors">
-                    Our Mission
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Impact Report
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Partner Charities
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Volunteer
-                  </Link>
-                </li>
-              </ul>
+            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
+                <Users className="w-8 h-8 text-green-700" />
+              </div>
+              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">3. Empower Communities</h3>
+              <p className="text-gray-600 font-light">
+                Together, we create a positive impact on local communities.
+              </p>
             </div>
-
-            <div>
-              <h4 className="font-medium mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-400 font-light">
-                <li>
-                  <Link href="/contact" className="hover:text-white transition-colors">
-                    Get in Touch
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Newsletter
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="https://www.linkedin.com/company/codewithpurpose"
-                    target="_blank"
-                    className="hover:text-white transition-colors"
-                  >
-                    LinkedIn
-                  </Link>
-                </li>
-                <li>
-                  <Link href="#" className="hover:text-white transition-colors">
-                    Support
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400 font-light">
-            <p>&copy; 2024 CodeWithPurpose. Made with ❤️ for communities everywhere.</p>
           </div>
         </div>
-      </footer>
+      </section>
+
+      {/* Community Section */}
+      <section className="py-16 lg:py-24 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-light mb-4">
+                <Users className="w-4 h-4" />
+                <span>Join Our Community</span>
+              </div>
+              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 tracking-tight">
+                You're not just a student - you're part of a movement
+              </h2>
+              <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
+                When you join CodeWithPurpose, you're joining a global family of learners, creators, and changemakers. Our community is supportive, inclusive, and passionate about making a difference.
+              </p>
+              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white font-light" asChild>
+                <Link href="/contact">Get Involved Today</Link>
+              </Button>
+            </div>
+            <div className="relative">
+              <Image src="/community.jpg" alt="Community" width={500} height={500} className="rounded-2xl shadow-xl" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </div>
   )
 }
