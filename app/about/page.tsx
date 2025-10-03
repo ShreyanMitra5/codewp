@@ -83,7 +83,7 @@ export default function AboutPage() {
                   <h2 className="text-2xl font-medium text-gray-900">Our Mission</h2>
                 </div>
                 <p className="text-gray-700 leading-relaxed">
-                  Our mission is centered on our dedication to the community. We allocate 50% of the revenue from course
+                  Our mission is centered on a deepened dedication to the community. We allocate 50% of the revenue from course
                   fees to local charities, ensuring that our impact extends beyond the classroom. This approach creates
                   a unique and exciting blend of learning and giving back.
                 </p>
