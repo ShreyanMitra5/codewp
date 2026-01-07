@@ -10,7 +10,7 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: "Samanyu Goyal",
-      role: "Chief Operations Officer",
+      role: "Chief Financial Officer",
       description: "Focused on spreading awareness about our mission and connecting with communities to maximize our educational and charitable impact.",
       initials: "SG",
       color: "bg-blue-100",
