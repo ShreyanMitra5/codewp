@@ -3,6 +3,8 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 
+import { TeamNotePopup } from "@/components/team-note-popup"
+
 const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700"],
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     shortcut: "/codewp-logo.png",
     apple: "/codewp-logo.png",
   },
-    generator: 'v0.dev'
+  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -28,7 +30,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} font-light antialiased tracking-tight`}>{children}</body>
+      <body className={`${inter.className} font-light antialiased tracking-tight`}>
+        {children}
+        <TeamNotePopup />
+      </body>
     </html>
   )
 }

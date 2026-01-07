@@ -2,57 +2,18 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, Clock, Users, Award, ExternalLink } from "lucide-react"
+import { Navbar } from "@/components/navbar"
 
 export default function ProgramsPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
-      <nav className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-2">
-              <Image src="/codewp-logo.png" alt="CodeWithPurpose Logo" width={32} height={32} className="w-8 h-8" />
-              <span className="text-xl font-bold text-teal-700">CodeWithPurpose</span>
-            </div>
-
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-green-700 hover:text-teal-600 transition-colors font-light tracking-tight">
-                Home
-              </Link>
-              <Link href="/programs" className="text-teal-600 font-medium font-light tracking-tight">
-                Programs
-              </Link>
-              <Link
-                href="/about"
-                className="text-green-700 hover:text-teal-600 transition-colors font-light tracking-tight"
-              >
-                About
-              </Link>
-              <Link
-                href="/contact"
-                className="text-green-700 hover:text-teal-600 transition-colors font-light tracking-tight"
-              >
-                Contact
-              </Link>
-            </div>
-
-            <Button className="bg-green-700 hover:bg-green-800 text-white" asChild>
-              <Link href="/">Join Our Mission</Link>
-            </Button>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Section */}
       <section className="py-16 lg:py-24">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Link
-            href="/"
-            className="inline-flex items-center text-teal-600 hover:text-teal-700 mb-8 font-light tracking-tight"
-          >
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
-          </Link>
+
 
           <div className="text-center mb-12">
             <h1 className="text-4xl lg:text-6xl font-bold text-green-900 mb-6 font-light tracking-tight">
@@ -135,7 +96,7 @@ export default function ProgramsPage() {
                 <div className="flex items-center justify-between mb-6 p-4 bg-green-50 rounded-lg">
                   <div className="flex items-center">
                     <Users className="w-5 h-5 text-teal-600 mr-2" />
-                    <span className="text-sm text-green-600 font-light tracking-tight">500+ students enrolled</span>
+                    <span className="text-sm text-green-600 font-light tracking-tight">1500+ students enrolled</span>
                   </div>
                   <div className="flex items-center">
                     <Award className="w-5 h-5 text-teal-600 mr-2" />
@@ -250,11 +211,11 @@ export default function ProgramsPage() {
             </p>
             <div className="grid md:grid-cols-3 gap-6 mt-8">
               <div className="bg-green-700 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2 font-light tracking-tight">500+</div>
-                <div className="text-green-100 font-light tracking-tight">Students across 52+ countries</div>
+                <div className="text-2xl font-bold mb-2 font-light tracking-tight">1500+</div>
+                <div className="text-green-100 font-light tracking-tight">Students across 100+ countries</div>
               </div>
               <div className="bg-green-700 rounded-lg p-4">
-                <div className="text-2xl font-bold mb-2 font-light tracking-tight">42+</div>
+                <div className="text-2xl font-bold mb-2 font-light tracking-tight">4000+</div>
                 <div className="text-green-100 font-light tracking-tight">Hours of quality education</div>
               </div>
               <div className="bg-green-700 rounded-lg p-4">

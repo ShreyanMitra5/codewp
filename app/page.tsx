@@ -2,62 +2,45 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Star, Code, Users, BookOpen, Heart, ArrowRight } from "lucide-react"
-import { Header } from "@/components/layout/Header"
-import { Footer } from "@/components/layout/Footer"
+import { NumberTicker } from "@/components/ui/number-ticker"
+import { Navbar } from "@/components/navbar"
 
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-green-50 font-light antialiased">
-      <Header />
+      <Navbar />
 
       {/* Hero Section */}
-      <section className="py-12 lg:py-20">
+      <section className="relative pt-20 pb-20 lg:pt-32 lg:pb-32 overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-green-200/40 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-teal-200/40 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-green-800 rounded-3xl overflow-hidden">
-            <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center p-8 lg:p-12">
-              <div className="text-white">
-                <div className="flex items-center space-x-1 mb-6">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                  <span className="ml-2 text-sm font-light">Loved by our students and community</span>
-                </div>
+          <div className="text-center max-w-4xl mx-auto">
+            <div className="inline-flex items-center space-x-2 bg-white/50 backdrop-blur-sm border border-green-100 rounded-full px-4 py-1.5 mb-8 shadow-sm">
+              <span className="flex h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+              <span className="text-sm font-medium text-green-800 tracking-tight">Trusted by over 100+ countries</span>
+            </div>
 
-                <h1 className="text-4xl lg:text-5xl font-light mb-6 leading-tight tracking-tight">
-                  Learn to code for free and make a difference.
-                </h1>
+            <h1 className="text-5xl lg:text-7xl font-medium text-gray-900 mb-8 leading-[1.1] tracking-tight">
+              Learn to code. <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-600 to-teal-600">Change the world.</span>
+            </h1>
 
-                <p className="text-xl mb-8 text-green-200 leading-relaxed font-light">
-                  Welcome to CodeWithPurpose, where education is free and every donation directly supports local charities. Join us to build your coding skills and empower your community.
-                </p>
+            <p className="text-xl lg:text-2xl text-gray-600 mb-10 leading-relaxed font-light max-w-2xl mx-auto">
+              We're a non-profit coding bootcamp where your education funds local charities. Master modern tech skills while making a real difference.
+            </p>
 
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white font-light" asChild>
-                    <Link href="#courses">Start Your Journey</Link>
-                  </Button>
-                  <Button size="lg" className="bg-green-700 hover:bg-green-800 text-white font-light" asChild>
-                    <Link href="/about">Our Story</Link>
-                  </Button>
-                </div>
-              </div>
-
-              <div className="relative">
-                <div className="bg-white rounded-2xl overflow-hidden shadow-2xl">
-                  <div className="h-48 relative">
-                    <Image src="/coding-laptop.jpg" alt="Coding on laptop" fill className="object-cover" />
-                    <div className="absolute inset-0 bg-green-900/20"></div>
-                  </div>
-                  <div className="p-8 text-center">
-                    <div className="flex items-center justify-center mb-4">
-                      <Code className="w-8 h-8 text-green-700 mr-2" />
-                      <Heart className="w-8 h-8 text-red-500" />
-                      <Users className="w-8 h-8 text-green-700 ml-2" />
-                    </div>
-                    <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">Code. Give. Impact.</h3>
-                    <p className="text-gray-600 font-light">Where technology meets compassion</p>
-                  </div>
-                </div>
-              </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button size="lg" className="h-14 px-8 rounded-full bg-gray-900 hover:bg-gray-800 text-white text-lg font-medium shadow-xl hover:shadow-2xl transition-all duration-300" asChild>
+                <Link href="#courses">Start Learning Free</Link>
+              </Button>
+              <Button size="lg" variant="outline" className="h-14 px-8 rounded-full border-gray-200 hover:bg-white hover:border-gray-300 text-gray-900 text-lg font-medium bg-white/50 backdrop-blur-sm shadow-sm transition-all duration-300" asChild>
+                <Link href="/about">How It Works</Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -68,15 +51,21 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-3 gap-8 text-center">
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">500+</div>
+              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">
+                <NumberTicker value={1500} suffix="+" />
+              </div>
               <p className="text-gray-600 font-light">students have started their coding journey with us</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">52+</div>
+              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">
+                <NumberTicker value={100} suffix="+" />
+              </div>
               <p className="text-gray-600 font-light">countries reached through our programs</p>
             </div>
             <div className="bg-white rounded-xl p-6 shadow-sm">
-              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">42+</div>
+              <div className="text-3xl font-light text-gray-800 mb-2 tracking-tight">
+                <NumberTicker value={4000} suffix="+" />
+              </div>
               <p className="text-gray-600 font-light">hours of quality education delivered</p>
             </div>
           </div>
@@ -95,7 +84,8 @@ export default function HomePage() {
               Ready to make a difference through code?
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-             Our courses are completely free. All we ask for is a donation to one of our partner charities to help support our community.
+              Let's be honest - every enrollment helps fund local charities while you build the skills that will shape
+              your future. It's learning with purpose, literally.
             </p>
           </div>
 
@@ -124,7 +114,9 @@ export default function HomePage() {
                 </h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed font-light">
-                 This course is free. Start your coding journey with Python and build real projects. Your donation will help support local charities.
+                  Never coded before? No worries! This course takes you from "What's Python?" to building your first
+                  real projects. We'll walk through everything step-by-step, and honestly, you'll be amazed at what you
+                  can create.
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -151,7 +143,7 @@ export default function HomePage() {
                     href="https://www.udemy.com/course/introduction-to-python-bootcamp/?kw=Introduction+To+Python+for+Complete+Beginners%21&src=sac"
                     target="_blank"
                   >
-                    Donate and Enroll
+                    Enroll Now on Udemy
                   </Link>
                 </Button>
               </div>
@@ -179,7 +171,9 @@ export default function HomePage() {
                 <h3 className="text-2xl font-medium text-gray-900 mb-4 tracking-tight">Vibecoding 101</h3>
 
                 <p className="text-gray-600 mb-6 leading-relaxed font-light">
-                  This course is free. Bring creativity to your coding and build projects with personality. Your donation will help support local charities.
+                  Who says coding has to be boring? This course brings creativity and personality to programming. You'll
+                  learn modern development while building projects that actually reflect who you are. It's coding with
+                  personality.
                 </p>
 
                 <div className="space-y-3 mb-8">
@@ -203,7 +197,7 @@ export default function HomePage() {
 
                 <Button className="w-full bg-green-800 hover:bg-green-900 text-white font-light" asChild>
                   <Link href="https://www.udemy.com/course/vibecoding-101/?kw=Vibecoding+101&src=sac" target="_blank">
-                    Donate and Enroll
+                    Enroll Now on Udemy
                   </Link>
                 </Button>
               </div>
@@ -214,8 +208,10 @@ export default function HomePage() {
             <p className="text-gray-600 mb-4 font-light">
               Both courses include lifetime access, community support, and the warm feeling of making a difference
             </p>
-            <Button variant="outline" className="bg-transparent border-green-700 text-green-700 hover:bg-green-50 hover:text-green-800 font-light" asChild>
-              <Link href="/programs">View All Learning Paths</Link>
+            <Button variant="outline" className="border-green-700 text-green-700 hover:bg-green-50 font-light" asChild>
+              <Link href="/programs">
+                View All Programs <ArrowRight className="w-4 h-4 ml-2" />
+              </Link>
             </Button>
           </div>
         </div>
@@ -297,82 +293,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="impact" className="py-16 lg:py-24 bg-green-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-light mb-4">
-              <Heart className="w-4 h-4" />
-              <span>Our Model</span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-              Learn, Grow, and Give Back
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-light">
-              Our unique approach combines education with charitable giving, creating a powerful cycle of community support.
-            </p>
-          </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
-                <BookOpen className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">1. Access Free Courses</h3>
-              <p className="text-gray-600 font-light">
-                Our coding courses are available to everyone at no cost.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
-                <Heart className="w-8 h-8 text-red-500" />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">2. Donate to Charities</h3>
-              <p className="text-gray-600 font-light">
-                Your donations directly fund local charities and support our mission.
-              </p>
-            </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg text-center">
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-green-100 mx-auto mb-6">
-                <Users className="w-8 h-8 text-green-700" />
-              </div>
-              <h3 className="text-xl font-medium text-gray-800 mb-2 tracking-tight">3. Empower Communities</h3>
-              <p className="text-gray-600 font-light">
-                Together, we create a positive impact on local communities.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Community Section */}
-      <section className="py-16 lg:py-24 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center space-x-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-light mb-4">
-                <Users className="w-4 h-4" />
-                <span>Join Our Community</span>
-              </div>
-              <h2 className="text-4xl lg:text-5xl font-light text-gray-900 mb-6 tracking-tight">
-                You're not just a student - you're part of a movement
-              </h2>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed font-light">
-                When you join CodeWithPurpose, you're joining a global family of learners, creators, and changemakers. Our community is supportive, inclusive, and passionate about making a difference.
-              </p>
-              <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white font-light" asChild>
-                <Link href="/contact">Get Involved Today</Link>
-              </Button>
-            </div>
-            <div className="relative">
-              <Image src="/community.jpg" alt="Community" width={500} height={500} className="rounded-2xl shadow-xl" />
-            </div>
-          </div>
-        </div>
-      </section>
-      <Footer />
     </div>
   )
 }
