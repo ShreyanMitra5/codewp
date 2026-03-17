@@ -1,206 +1,260 @@
-import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Heart, Users, Target, ArrowLeft } from "lucide-react"
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from "next/image"
+import { ArrowRight, Linkedin } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 
 export default function AboutPage() {
-  const teamMembers = [
+  const team = [
     {
-      name: "Samanyu Goyal",
-      role: "Chief Operations Officer",
-      description: "Focused on spreading awareness about our mission and connecting with communities to maximize our educational and charitable impact.",
-      initials: "SG",
-      color: "bg-blue-100",
-      textColor: "text-blue-800",
+      name: "Shreyan Mitra",
+      role: "Co-Founder",
+      img: "/shreyan.jpg",
+      quote: "Started coding at 14 and realized most kids couldn't access the same resources I had. That didn't sit right with me.",
+      linkedin: "https://www.linkedin.com/in/shreyan-m-8910172b7/",
     },
     {
       name: "Bruhatt Rao",
       role: "Co-Founder",
-      description: "Dedicated to empowering learners through innovative educational approaches and fostering a community-driven learning environment.",
-      initials: "BR",
-      color: "bg-teal-100",
-      textColor: "text-teal-800",
+      img: "/bhim.jpeg",
+      quote: "Watched my cousins in India struggle to find quality tech education. Built this so no one else has to.",
+      linkedin: "https://www.linkedin.com/in/bruhatt-rao/",
     },
     {
-      name: "Shreyan Mitra",
-      role: "Co-Founder",
-      description: "Passionate about creating accessible coding education and building meaningful connections between technology and community impact.",
-      initials: "SM",
-      color: "bg-green-100",
-      textColor: "text-green-800",
+      name: "Samanyu Goyal",
+      role: "Chief Financial Officer",
+      img: "/samanyu.jpeg",
+      quote: "Every dollar we raise goes to education, not overhead. I make sure of that.",
+      linkedin: "https://www.linkedin.com/in/samanyu-goyal/",
+    },
+    {
+      name: "Naman Jain",
+      role: "Director of Outreach",
+      img: null,
+      quote: "Connecting students everywhere with the tools they need to build a better future.",
+      linkedin: "https://www.linkedin.com/in/naman-jain-9276593a5/",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-gray-50 font-light tracking-tight antialiased">
-      {/* Navigation */}
+    <div className="min-h-screen bg-[#FDF4EE] font-sans">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-
-
-          <div className="text-center mb-12">
-            <h1 className="text-4xl lg:text-6xl font-medium text-gray-900 mb-6">What is CodeWithPurpose?</h1>
-            <p className="text-xl text-green-600 leading-relaxed">
-              We're more than just a coding bootcamp. We're a movement that believes education and giving back should go
-              hand in hand.
-            </p>
-          </div>
-        </div>
+      {/* ── HERO ── */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
+        <p className="italic text-[#1C2B3A]/55 text-sm mb-5">Our Story</p>
+        <h1 className="font-serif text-[clamp(2.8rem,6vw,5rem)] leading-[1.1] text-[#1C2B3A] max-w-2xl mb-8">
+          We're just students who got frustrated
+        </h1>
+        <p className="text-[#1C2B3A]/65 text-lg leading-relaxed max-w-2xl">
+          Frustrated that a kid's future could be determined by their parents' bank account.
+          Frustrated that knowledge was locked behind $15,000 paywalls.
+          So we did something about it.
+        </p>
       </section>
 
-      {/* Main Content */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-white rounded-2xl p-8 lg:p-12 shadow-lg">
-            <div className="prose prose-lg max-w-none">
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
-                    <Heart className="w-6 h-6 text-green-800" />
-                  </div>
-                  <h2 className="text-2xl font-medium text-gray-900">Our Foundation</h2>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                  Our organization is built on the idea that education and philanthropy can go hand-in-hand. We offer a
-                  virtual tech-focused bootcamp designed to equip students with the latest skills and knowledge in
-                  technology. By enrolling in our bootcamp, students not only gain valuable expertise but also
-                  contribute to the greater good.
-                </p>
-              </div>
-
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
-                    <Target className="w-6 h-6 text-green-800" />
-                  </div>
-                  <h2 className="text-2xl font-medium text-gray-900">Our Mission</h2>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                  Our mission is centered on our dedication to the community. We allocate 50% of the revenue from course
-                  fees to local charities, ensuring that our impact extends beyond the classroom. This approach creates
-                  a unique and exciting blend of learning and giving back.
-                </p>
-              </div>
-
-              <div className="mb-8">
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 bg-teal-100 rounded-full flex items-center justify-center mr-4">
-                    <Users className="w-6 h-6 text-green-800" />
-                  </div>
-                  <h2 className="text-2xl font-medium text-gray-900">The Impact</h2>
-                </div>
-                <p className="text-gray-700 leading-relaxed">
-                  Through this initiative, students can develop their technical skills while knowing that they are
-                  making a positive difference in their community. Every line of code you write, every project you
-                  complete, and every skill you master contributes to something bigger than yourself.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Values Section */}
-      <section className="py-16 bg-teal-50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-medium text-gray-900 mb-4">What Drives Us</h2>
-            <p className="text-xl text-green-600">The values that guide everything we do</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Heart className="w-8 h-8 text-green-800" />
-              </div>
-              <h3 className="text-xl font-medium mb-3">Purpose Over Profit</h3>
-              <p className="text-gray-600">
-                We measure success not just by what our students learn, but by the positive impact we create together in
-                our communities.
+      {/* ── ORIGIN ── */}
+      <section className="border-y border-[#E8DDD6]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24 grid lg:grid-cols-2 gap-16 items-start">
+          <div>
+            <p className="text-[#1C2B3A]/40 text-sm mb-4">— Since 2022</p>
+            <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] leading-snug mb-6">
+              It started with a simple question
+            </h2>
+            <div className="space-y-4 text-[#1C2B3A]/65 leading-relaxed">
+              <p><em>"Why does learning to code cost so much?"</em></p>
+              <p>
+                We were high school students who'd taught ourselves to code through YouTube and trial and error.
+                We knew not everyone had that luxury — time, guidance, or reliable internet.
               </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Users className="w-8 h-8 text-green-800" />
-              </div>
-              <h3 className="text-xl font-medium mb-3">Community First</h3>
-              <p className="text-gray-600">
-                Every decision we make is filtered through one question: "How does this serve our community better?"
+              <p>
+                The bootcamps we saw charged $10,000, $15,000, even $20,000. For what?
+                Knowledge that should be free. Skills that could change someone's life.
               </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 text-center shadow-sm">
-              <div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Target className="w-8 h-8 text-green-800" />
-              </div>
-              <h3 className="text-xl font-medium mb-3">Real Impact</h3>
-              <p className="text-gray-600">
-                We're not interested in feel-good gestures. We track our donations, measure our impact, and ensure every
-                dollar makes a real difference.
+              <p className="text-[#1C2B3A] font-medium">
+                We thought: what if we just taught people for free? What's stopping us?
               </p>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Team Section */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-medium text-gray-900 mb-4">Our Leadership Team</h2>
-            <p className="text-xl text-green-600">The passionate individuals behind our mission</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {teamMembers.map((member) => (
-              <Card key={member.name} className="border-none shadow-lg hover:shadow-xl transition-shadow bg-white rounded-2xl overflow-hidden text-center">
-                <CardHeader className="pt-8 pb-4">
-                  <Avatar className={`mx-auto w-24 h-24 mb-6 ${member.color}`}>
-                    <AvatarImage src={`/${member.name.toLowerCase().replace(" ", "-")}.png`} alt={member.name} />
-                    <AvatarFallback className={`${member.textColor} text-3xl font-medium`}>
-                      {member.initials}
-                    </AvatarFallback>
-                  </Avatar>
-                  <CardTitle className="text-2xl font-medium text-gray-900">{member.name}</CardTitle>
-                  <p className="text-green-600 font-medium tracking-wide text-sm uppercase mt-1">
-                    {member.role}
-                  </p>
-                </CardHeader>
-                <CardContent className="pb-8 px-6">
-                  <p className="text-gray-600 leading-relaxed font-light">
-                    {member.description}
-                  </p>
-                </CardContent>
-              </Card>
+          <div className="space-y-5">
+            {[
+              { icon: "💡", title: "The idea", body: "Create courses. Make them free. Teach anyone who wants to learn." },
+              { icon: "🎥", title: "The first course", body: "Recorded in our bedrooms with basic equipment. But the content? Solid." },
+              { icon: "🌍", title: "The result", body: "2,000+ students from 110+ countries — and we're just getting started." },
+            ].map((item) => (
+              <div key={item.title} className="flex items-start gap-5 p-5 bg-white rounded-2xl border border-[#E8DDD6]">
+                <span className="text-2xl flex-shrink-0">{item.icon}</span>
+                <div>
+                  <p className="font-medium text-[#1C2B3A] mb-1">{item.title}</p>
+                  <p className="text-[#1C2B3A]/60 text-sm leading-relaxed">{item.body}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-medium text-gray-900 mb-6">Ready to be part of something bigger?</h2>
-          <p className="text-xl text-green-600 mb-8">
-            Join our community of learners who are changing their lives while changing their communities.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="bg-green-800 hover:bg-green-900 text-white" asChild>
-              <Link href="/programs">View Our Programs</Link>
-            </Button>
-            <Button size="lg" variant="outline" className="border-green-800 text-green-800 hover:bg-teal-50" asChild>
-              <Link href="/contact">Get in Touch</Link>
-            </Button>
+      {/* ── RECOGNITION ── */}
+      <section className="bg-[#1C2B3A]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-14 lg:py-20 flex flex-col lg:flex-row lg:items-center gap-8">
+          <div className="w-14 h-14 rounded-full bg-[#FDF4EE]/10 flex items-center justify-center flex-shrink-0 text-[#FDF4EE] text-2xl">
+            ★
+          </div>
+          <div>
+            <h2 className="font-serif text-[clamp(1.6rem,3.5vw,2.4rem)] text-[#FDF4EE] leading-snug mb-3">
+              Recognized by the U.S. House of Representatives
+            </h2>
+            <p className="text-[#FDF4EE]/60 leading-relaxed max-w-2xl">
+              Representative <span className="text-[#FDF4EE]/90 font-medium">Mark DeSaulnier</span> honored
+              CodeWithPurpose for our commitment to making free, accessible coding education available to students worldwide.
+              It's not about the award. It's proof that this mission matters.
+            </p>
           </div>
         </div>
       </section>
+
+      {/* ── BELIEFS ── */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+        <p className="italic text-[#1C2B3A]/55 text-sm mb-2">What drives us</p>
+        <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] mb-14">
+          This is what we stand for
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-px bg-[#E8DDD6]">
+          {[
+            {
+              num: "01",
+              title: "Education is a right",
+              body: "Not a privilege. Not a commodity. Every person deserves access to knowledge, regardless of where they were born or how much money their parents have.",
+            },
+            {
+              num: "02",
+              title: "Students teaching students",
+              body: "We're not professors in ivory towers. We're students who remember what it's like to learn for the first time. That makes us better teachers.",
+            },
+            {
+              num: "03",
+              title: "No borders for knowledge",
+              body: "A student in Lagos and a student in San Francisco deserve the same opportunities. Geography shouldn't determine destiny.",
+            },
+          ].map((b) => (
+            <div key={b.num} className="bg-[#FDF4EE] p-8 lg:p-10">
+              <p className="text-[#1C2B3A]/25 text-sm font-medium mb-6">{b.num}</p>
+              <h3 className="font-serif text-xl text-[#1C2B3A] mb-3">{b.title}</h3>
+              <p className="text-[#1C2B3A]/60 text-sm leading-relaxed">{b.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── TEAM ── */}
+      <section className="border-t border-[#E8DDD6] bg-white">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+          <p className="italic text-[#1C2B3A]/55 text-sm mb-2">The people behind this</p>
+          <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#1C2B3A] mb-14">
+            Real people. Real stories.
+          </h2>
+
+          <div className="grid md:grid-cols-4 gap-8">
+            {team.map((member) => (
+              <div key={member.name} className="border border-[#E8DDD6] rounded-2xl p-7">
+                <div className="w-16 h-16 rounded-full overflow-hidden mb-5 bg-[#E0D8D0] flex items-center justify-center">
+                  {member.img ? (
+                    <Image src={member.img} alt={member.name} width={64} height={64} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-[#1C2B3A]/50 font-medium text-lg">{member.name.split(" ").map((n: string) => n[0]).join("")}</span>
+                  )}
+                </div>
+                <div className="flex items-start justify-between gap-2 mb-1">
+                  <p className="font-medium text-[#1C2B3A]">{member.name}</p>
+                  <Link href={member.linkedin} target="_blank" className="text-[#1C2B3A]/30 hover:text-[#1C2B3A]/70 transition-colors flex-shrink-0">
+                    <Linkedin className="w-4 h-4" />
+                  </Link>
+                </div>
+                <p className="text-[#1C2B3A]/45 text-xs uppercase tracking-wider mb-4">{member.role}</p>
+                <p className="text-[#1C2B3A]/65 text-sm leading-relaxed italic">
+                  &ldquo;{member.quote}&rdquo;
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── STATS ── */}
+      <section className="border-y border-[#E8DDD6]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-10 grid grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { num: "2,000+", label: "Students" },
+            { num: "110+",   label: "Countries" },
+            { num: "20+",    label: "Languages Taught" },
+            { num: "8,000+", label: "Minutes of Teaching" },
+          ].map((s) => (
+            <div key={s.label}>
+              <p className="font-serif text-4xl text-[#1C2B3A]">{s.num}</p>
+              <p className="text-[#1C2B3A]/55 text-sm mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── CTA ── */}
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 lg:py-24">
+        <div className="rounded-3xl bg-[#1C2B3A] px-8 lg:px-16 py-12 lg:py-16 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-8">
+          <h2 className="font-serif text-[clamp(1.8rem,4vw,2.8rem)] text-[#FDF4EE] leading-snug max-w-md">
+            Want to be part of something real?
+          </h2>
+          <div className="flex flex-col sm:flex-row gap-3 flex-shrink-0">
+            <Link
+              href="/#courses"
+              className="flex items-center justify-center gap-2 bg-[#FDF4EE] text-[#1C2B3A] text-sm font-semibold px-6 py-3 rounded-full hover:bg-white transition-colors"
+            >
+              Start Learning Free
+            </Link>
+            <Link
+              href="/join"
+              className="flex items-center justify-center gap-2 border border-[#FDF4EE]/30 text-[#FDF4EE] text-sm font-medium px-6 py-3 rounded-full hover:border-[#FDF4EE]/60 transition-colors"
+            >
+              Volunteer with Us <ArrowRight className="w-4 h-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FOOTER ── */}
+      <footer className="border-t border-[#E8DDD6]">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8 py-12">
+          <div className="grid md:grid-cols-4 gap-10">
+            <div className="md:col-span-2">
+              <p className="font-serif text-xl text-[#1C2B3A] mb-2">CodeWithPurpose</p>
+              <p className="text-[#1C2B3A]/55 text-sm leading-relaxed max-w-xs">
+                A student-run nonprofit making tech education free and accessible for everyone, everywhere.
+              </p>
+              <p className="text-[#1C2B3A]/30 text-xs mt-4">Recognized by the U.S. House of Representatives</p>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-[#1C2B3A] mb-4">Learn</p>
+              <ul className="space-y-2.5 text-sm text-[#1C2B3A]/55">
+                <li><Link href="/courses" className="hover:text-[#1C2B3A] transition-colors">All Courses</Link></li>
+                <li><Link href="/#courses" className="hover:text-[#1C2B3A] transition-colors">Free Courses</Link></li>
+                <li><Link href="/about" className="hover:text-[#1C2B3A] transition-colors">Our Story</Link></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-medium text-[#1C2B3A] mb-4">Get Involved</p>
+              <ul className="space-y-2.5 text-sm text-[#1C2B3A]/55">
+                <li><Link href="/join" className="hover:text-[#1C2B3A] transition-colors">Volunteer</Link></li>
+                <li><Link href="/donate" className="hover:text-[#1C2B3A] transition-colors">Donate</Link></li>
+                <li><Link href="/contact" className="hover:text-[#1C2B3A] transition-colors">Contact Us</Link></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-[#E8DDD6] mt-10 pt-8 flex flex-col md:flex-row justify-between items-center gap-2 text-xs text-[#1C2B3A]/35">
+            <p>© {new Date().getFullYear()} CodeWithPurpose · 501(c)(3) nonprofit · Made by students, for students.</p>
+            <p>Free education for every student, everywhere.</p>
+          </div>
+        </div>
+      </footer>
     </div>
   )
 }

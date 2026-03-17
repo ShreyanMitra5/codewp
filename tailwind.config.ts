@@ -20,9 +20,14 @@ const config: Config = {
     },
     extend: {
       fontFamily: {
-        sans: ["Inter", "system-ui", "sans-serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-serif)", "Georgia", "serif"],
       },
       colors: {
+        cream: "#FDF4EE",
+        navy: "#1C2B3A",
+        "navy-light": "#2D3F52",
+        "warm-border": "#E8DDD6",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

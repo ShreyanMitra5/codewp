@@ -4,106 +4,90 @@ import { useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Menu, X } from "lucide-react"
-import { Button } from "@/components/ui/button"
 
 export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-    const toggleMenu = () => setIsMenuOpen(!isMenuOpen)
-
     return (
-        <nav className="bg-white shadow-sm sticky top-0 z-40">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <nav className="bg-[#FDF4EE] sticky top-0 z-40 border-b border-[#E8DDD6]">
+            <div className="max-w-6xl mx-auto px-6 lg:px-8">
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
-                    <div className="flex items-center space-x-2">
-                        <Link href="/" className="flex items-center space-x-2">
-                            <Image src="/codewp-logo.png" alt="CodeWithPurpose Logo" width={32} height={32} className="w-8 h-8" />
-                            <span className="text-xl font-medium text-gray-800 tracking-tight">CodeWithPurpose</span>
-                        </Link>
-                    </div>
+                    <Link href="/" className="flex items-center gap-2.5">
+                        <Image src="/codewp-logo.png" alt="CodeWithPurpose" width={28} height={28} className="w-7 h-7" />
+                        <span className="font-serif text-lg text-navy tracking-tight">CodeWithPurpose</span>
+                    </Link>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        <Link href="/programs" className="text-gray-700 hover:text-green-800 transition-colors font-light">
-                            Programs
+                    {/* Desktop Navigation — centered */}
+                    <div className="hidden md:flex items-center gap-8">
+                        <Link href="/courses" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
+                            Courses
                         </Link>
-                        <Link href="/about" className="text-gray-700 hover:text-green-800 transition-colors font-light">
-                            About
+                        <Link href="/about" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
+                            About Us
                         </Link>
-                        <Link href="/donate" className="text-gray-700 hover:text-green-800 transition-colors font-light">
-                            Donate
+                        <Link href="/join" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
+                            Join Us
                         </Link>
-                        <Link href="/#impact" className="text-gray-700 hover:text-green-800 transition-colors font-light">
+                        <Link href="/impact" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
                             Impact
                         </Link>
-                        <Link href="/contact" className="text-gray-700 hover:text-green-800 transition-colors font-light">
+                        <Link href="/contact" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
                             Contact
                         </Link>
                     </div>
 
-                    {/* Desktop CTA */}
+                    {/* Desktop CTA — dark pill */}
                     <div className="hidden md:flex">
-                        <Button className="bg-green-800 hover:bg-green-900 text-white font-light" asChild>
-                            <Link href="/join">Join Our Mission</Link>
-                        </Button>
+                        <Link
+                            href="/donate"
+                            className="flex items-center gap-2 bg-navy text-[#FDF4EE] text-[14px] font-medium px-5 py-2.5 rounded-full hover:bg-navy-light transition-colors"
+                        >
+                            <span className="w-1.5 h-1.5 rounded-full bg-[#FDF4EE]"></span>
+                            Donate Now
+                        </Link>
                     </div>
 
-                    {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
-                        <button
-                            onClick={toggleMenu}
-                            className="text-gray-700 hover:text-green-800 focus:outline-none"
-                        >
-                            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-                        </button>
-                    </div>
+                    {/* Mobile button */}
+                    <button
+                        onClick={() => setIsMenuOpen(!isMenuOpen)}
+                        className="md:hidden text-navy"
+                        aria-label="Toggle menu"
+                    >
+                        {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+                    </button>
                 </div>
             </div>
 
-            {/* Mobile Menu Dropdown */}
+            {/* Mobile Menu */}
             {isMenuOpen && (
-                <div className="md:hidden bg-white border-t border-gray-100 absolute w-full left-0 shadow-lg">
-                    <div className="px-4 pt-2 pb-4 space-y-1">
-                        <Link
-                            href="/programs"
-                            className="block px-3 py-2 text-base font-light text-gray-700 hover:text-green-800 hover:bg-green-50 rounded-md"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Programs
-                        </Link>
-                        <Link
-                            href="/about"
-                            className="block px-3 py-2 text-base font-light text-gray-700 hover:text-green-800 hover:bg-green-50 rounded-md"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            About
-                        </Link>
-                        <Link
-                            href="/donate"
-                            className="block px-3 py-2 text-base font-light text-gray-700 hover:text-green-800 hover:bg-green-50 rounded-md"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Donate
-                        </Link>
-                        <Link
-                            href="/#impact"
-                            className="block px-3 py-2 text-base font-light text-gray-700 hover:text-green-800 hover:bg-green-50 rounded-md"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Impact
-                        </Link>
-                        <Link
-                            href="/contact"
-                            className="block px-3 py-2 text-base font-light text-gray-700 hover:text-green-800 hover:bg-green-50 rounded-md"
-                            onClick={() => setIsMenuOpen(false)}
-                        >
-                            Contact
-                        </Link>
-                        <div className="pt-2">
-                            <Button className="w-full bg-green-800 hover:bg-green-900 text-white font-light" asChild>
-                                <Link href="/join" onClick={() => setIsMenuOpen(false)}>Join Our Mission</Link>
-                            </Button>
+                <div className="md:hidden bg-[#FDF4EE] border-t border-[#E8DDD6] absolute w-full left-0 shadow-lg">
+                    <div className="px-6 py-4 space-y-1">
+                        {[
+                            { href: "/courses", label: "Courses" },
+                            { href: "/about", label: "About Us" },
+                            { href: "/join", label: "Join Us" },
+                            { href: "/impact", label: "Impact" },
+                            { href: "/contact", label: "Contact" },
+                        ].map((item) => (
+                            <Link
+                                key={item.href}
+                                href={item.href}
+                                className="block py-2.5 text-navy/70 hover:text-navy transition-colors"
+                                onClick={() => setIsMenuOpen(false)}
+                            >
+                                {item.label}
+                            </Link>
+                        ))}
+                        <div className="pt-3">
+                            <Link
+                                href="/donate"
+                                onClick={() => setIsMenuOpen(false)}
+                                className="flex items-center justify-center gap-2 bg-navy text-[#FDF4EE] text-sm font-medium px-5 py-3 rounded-full w-full"
+                            >
+                                <span className="w-1.5 h-1.5 rounded-full bg-[#FDF4EE]"></span>
+                                Donate Now
+                            </Link>
                         </div>
                     </div>
                 </div>

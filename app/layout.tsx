@@ -1,26 +1,32 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { DM_Serif_Display, DM_Sans } from "next/font/google"
 import "./globals.css"
 
 import { TeamNotePopup } from "@/components/team-note-popup"
 
-const inter = Inter({
+const dmSerif = DM_Serif_Display({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
-  variable: "--font-inter",
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+})
+
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-sans",
 })
 
 export const metadata: Metadata = {
-  title: "CodeWithPurpose - Learn to Code While Changing Lives",
+  title: "CodeWithPurpose — Free Education for Every Student, Everywhere",
   description:
-    "Join our unique coding bootcamp where every course helps fund local charities. Learn Python, web development, and more while making a real impact in your community.",
+    "A student-run nonprofit building free coding courses for students across 110+ countries. We believe education is a right, not a privilege.",
   icons: {
     icon: "/codewp-logo.png",
     shortcut: "/codewp-logo.png",
     apple: "/codewp-logo.png",
   },
-  generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -29,8 +35,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body className={`${inter.className} font-light antialiased tracking-tight`}>
+    <html lang="en" className={`${dmSerif.variable} ${dmSans.variable}`}>
+      <body className="font-sans antialiased">
         {children}
         <TeamNotePopup />
       </body>
