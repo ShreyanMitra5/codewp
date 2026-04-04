@@ -29,9 +29,16 @@ export default function AboutPage() {
     {
       name: "Naman Jain",
       role: "Director of Outreach",
-      img: null,
+      img: "/naman.png",
       quote: "Connecting students everywhere with the tools they need to build a better future.",
       linkedin: "https://www.linkedin.com/in/naman-jain-9276593a5/",
+    },
+    {
+      name: "Prithvi Jai Sudharsan",
+      role: "Director of Media",
+      img: "/prithvi.png",
+      quote: "My goal is to promote financial literacy and technology education to students worldwide.",
+      linkedin: "https://www.linkedin.com/in/prithvi-jai/",
     },
   ]
 
@@ -155,7 +162,7 @@ export default function AboutPage() {
             Real people. Real stories.
           </h2>
 
-          <div className="grid md:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
             {team.map((member) => (
               <div key={member.name} className="border border-[#E8DDD6] rounded-2xl p-7">
                 <div className="w-16 h-16 rounded-full overflow-hidden mb-5 bg-[#E0D8D0] flex items-center justify-center">

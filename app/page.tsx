@@ -38,14 +38,6 @@ export default function HomePage() {
                 Our Story
               </Link>
             </div>
-            <div className="flex gap-8 mt-10 pt-8 border-t border-[#E8DDD6]">
-              {([["2,000+","Students"],["110+","Countries"],["Free","Always"]] as [string,string][]).map(([n,l]) => (
-                <div key={l}>
-                  <p className="font-serif text-2xl text-[#1C2B3A]">{n}</p>
-                  <p className="text-[#1C2B3A]/50 text-xs mt-0.5">{l}</p>
-                </div>
-              ))}
-            </div>
           </div>
           {/* Right — tall hero photo */}
           <div className="rounded-2xl overflow-hidden h-[480px] lg:h-[580px] bg-[#E0D8D0]">
@@ -211,76 +203,36 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── PHOTO STRIP (marquee) ── */}
-      <section className="py-12 overflow-hidden relative">
-        {/* Fade edges */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10" style={{ background: 'linear-gradient(to right, #FDF4EE, transparent)' }} />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10" style={{ background: 'linear-gradient(to left, #FDF4EE, transparent)' }} />
-        {/* Scrolling track — images duplicated for seamless loop */}
-        <div className="animate-marquee flex gap-4 w-max">
-          {[
-            { src: "/Images/IMG_2619.jpeg", alt: "Volunteer helping student one-on-one", h: "h-64" },
-            { src: "/Images/IMG_2622.jpeg", alt: "Students at workshop", h: "h-72" },
-            { src: "/Images/IMG_2624.jpeg", alt: "CodeWithPurpose fair booth", h: "h-64" },
-            { src: "/Images/IMG_2625.jpeg", alt: "Hands-on learning", h: "h-80" },
-            { src: "/Images/IMG_2627.jpeg", alt: "Coding session", h: "h-64" },
-            { src: "/Images/IMG_2628.jpeg", alt: "Young coders", h: "h-72" },
-            { src: "/Images/IMG_2629.jpeg", alt: "Smiling student at laptop", h: "h-80" },
-            { src: "/Images/IMG_2630.jpeg", alt: "Student and mentor", h: "h-64" },
-            { src: "/Images/IMG_2631.jpeg", alt: "Crowded workshop", h: "h-72" },
-            { src: "/Images/IMG_2632.jpeg", alt: "Group learning", h: "h-64" },
-            { src: "/Images/IMG_2782.jpg", alt: "Volunteer presenting curriculum board", h: "h-80" },
-            { src: "/Images/IMG_2783.jpg", alt: "Mentor helping student", h: "h-64" },
-            { src: "/Images/IMG_2784.jpg", alt: "Students coding together", h: "h-72" },
-            { src: "/Images/IMG_2785.jpg", alt: "Volunteer leaning in to help", h: "h-64" },
-            { src: "/Images/IMG_2786.jpg", alt: "Workshop in progress", h: "h-80" },
-            { src: "/Images/IMG_2787.jpg", alt: "Students at laptops", h: "h-64" },
-            { src: "/Images/IMG_2789.jpg", alt: "Two students at booth", h: "h-72" },
-            { src: "/Images/IMG_2790.jpg", alt: "Students at board", h: "h-64" },
-            { src: "/Images/IMG_2791.jpg", alt: "Coding session close-up", h: "h-80" },
-            { src: "/Images/IMG_2792.jpg", alt: "Young student focused", h: "h-64" },
-            { src: "/Images/IMG_2793.jpg", alt: "Volunteer overseeing students", h: "h-72" },
-            { src: "/Images/IMG_2794.jpg", alt: "Students working on laptops", h: "h-64" },
-            { src: "/Images/IMG_2795.jpg", alt: "End of session group", h: "h-80" },
-            { src: "/Images/IMG_3652.jpeg", alt: "Advanced code poster", h: "h-64" },
-            { src: "/Images/IMG_2619.jpeg", alt: "Volunteer helping student one-on-one", h: "h-64" },
-            { src: "/Images/IMG_2622.jpeg", alt: "Students at workshop", h: "h-72" },
-            { src: "/Images/IMG_2624.jpeg", alt: "CodeWithPurpose fair booth", h: "h-64" },
-            { src: "/Images/IMG_2625.jpeg", alt: "Hands-on learning", h: "h-80" },
-            { src: "/Images/IMG_2627.jpeg", alt: "Coding session", h: "h-64" },
-            { src: "/Images/IMG_2628.jpeg", alt: "Young coders", h: "h-72" },
-            { src: "/Images/IMG_2629.jpeg", alt: "Smiling student at laptop", h: "h-80" },
-            { src: "/Images/IMG_2630.jpeg", alt: "Student and mentor", h: "h-64" },
-            { src: "/Images/IMG_2631.jpeg", alt: "Crowded workshop", h: "h-72" },
-            { src: "/Images/IMG_2632.jpeg", alt: "Group learning", h: "h-64" },
-            { src: "/Images/IMG_2782.jpg", alt: "Volunteer presenting curriculum board", h: "h-80" },
-            { src: "/Images/IMG_2783.jpg", alt: "Mentor helping student", h: "h-64" },
-            { src: "/Images/IMG_2784.jpg", alt: "Students coding together", h: "h-72" },
-            { src: "/Images/IMG_2785.jpg", alt: "Volunteer leaning in to help", h: "h-64" },
-            { src: "/Images/IMG_2786.jpg", alt: "Workshop in progress", h: "h-80" },
-            { src: "/Images/IMG_2787.jpg", alt: "Students at laptops", h: "h-64" },
-            { src: "/Images/IMG_2789.jpg", alt: "Two students at booth", h: "h-72" },
-            { src: "/Images/IMG_2790.jpg", alt: "Students at board", h: "h-64" },
-            { src: "/Images/IMG_2791.jpg", alt: "Coding session close-up", h: "h-80" },
-            { src: "/Images/IMG_2792.jpg", alt: "Young student focused", h: "h-64" },
-            { src: "/Images/IMG_2793.jpg", alt: "Volunteer overseeing students", h: "h-72" },
-            { src: "/Images/IMG_2794.jpg", alt: "Students working on laptops", h: "h-64" },
-            { src: "/Images/IMG_2795.jpg", alt: "End of session group", h: "h-80" },
-            { src: "/Images/IMG_3652.jpeg", alt: "Advanced code poster", h: "h-64" },
-          ].map((img, i) => (
-            <div
-              key={`${img.src}-${i}`}
-              className={`flex-shrink-0 w-52 ${img.h} rounded-2xl overflow-hidden bg-[#E0D8D0]`}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={208}
-                height={320}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
-              />
+      {/* ── PHOTO BENTO ── */}
+      <section className="bg-[#1C2B3A] py-14">
+        <div className="max-w-6xl mx-auto px-6 lg:px-8">
+          <p className="italic text-[#FDF4EE]/40 text-sm mb-6">In the classroom</p>
+          <div className="grid grid-cols-4 grid-rows-3 gap-2.5" style={{ height: "640px" }}>
+            {/* Large — top-left */}
+            <div className="col-span-2 row-span-2 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2625.jpeg" alt="Hands-on learning" width={600} height={500} loading="lazy" className="w-full h-full object-cover" />
             </div>
-          ))}
+            {/* Top-right pair */}
+            <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2629.jpeg" alt="Smiling student" width={300} height={240} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            <div className="col-span-1 row-span-2 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2784.jpg" alt="Students coding" width={300} height={480} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2782.jpg" alt="Volunteer presenting" width={300} height={240} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            {/* Bottom row */}
+            <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2789.jpg" alt="Students at booth" width={300} height={200} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            <div className="col-span-2 row-span-1 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2631.jpeg" alt="Crowded workshop" width={600} height={200} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+            <div className="col-span-1 row-span-1 rounded-2xl overflow-hidden">
+              <Image src="/Images/IMG_2795.jpg" alt="End of session" width={300} height={200} loading="lazy" className="w-full h-full object-cover" />
+            </div>
+          </div>
         </div>
       </section>
 

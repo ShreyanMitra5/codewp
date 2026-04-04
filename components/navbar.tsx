@@ -32,6 +32,9 @@ export function Navbar() {
                         <Link href="/impact" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
                             Impact
                         </Link>
+                        <Link href="/blog" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
+                            Blog
+                        </Link>
                         <Link href="/contact" className="text-[15px] text-navy/70 hover:text-navy transition-colors">
                             Contact
                         </Link>
@@ -68,6 +71,7 @@ export function Navbar() {
                             { href: "/about", label: "About Us" },
                             { href: "/join", label: "Join Us" },
                             { href: "/impact", label: "Impact" },
+                            { href: "/blog", label: "Blog" },
                             { href: "/contact", label: "Contact" },
                         ].map((item) => (
                             <Link
