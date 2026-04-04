@@ -2,7 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Navbar } from "@/components/navbar"
-import { SpinningGlobe } from "@/components/spinning-globe"
+import { GlobeWrapper } from "@/components/globe-wrapper"
 
 export default function HomePage() {
   return (
@@ -46,6 +46,7 @@ export default function HomePage() {
               alt="Student smiling while learning to code at CodeWithPurpose"
               width={600}
               height={800}
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="w-full h-full object-cover object-top"
               priority
             />
@@ -93,6 +94,8 @@ export default function HomePage() {
                 alt="Volunteer leaning in to help a young student at their laptop"
                 width={600}
                 height={800}
+                sizes="(max-width: 768px) 100vw, 50vw"
+                loading="lazy"
                 className="w-full h-full object-cover object-center"
               />
             </div>
@@ -175,6 +178,8 @@ export default function HomePage() {
                 alt="Letter from Representative Mark DeSaulnier recognizing CodeWithPurpose"
                 width={800}
                 height={900}
+                sizes="(max-width: 768px) 100vw, 55vw"
+                loading="lazy"
                 className="w-full h-[calc(100%+96px)] object-cover object-top -mt-24 group-hover:scale-[1.02] transition-transform duration-500"
               />
             </Link>
@@ -257,7 +262,7 @@ export default function HomePage() {
           {/* Python */}
           <div className="bg-white rounded-2xl overflow-hidden border border-[#E8DDD6] hover:border-[#1C2B3A]/30 transition-colors flex flex-col">
             <div className="h-52 bg-[#EBE5E0] flex items-center justify-center">
-              <Image src="/python-course.png" alt="Python Course" width={180} height={180} className="object-contain" />
+              <Image src="/python-course.png" alt="Python Course" width={180} height={180} sizes="180px" loading="lazy" className="object-contain" />
             </div>
             <div className="p-7 flex flex-col flex-1">
               <div className="flex items-center gap-2 mb-3">
@@ -281,7 +286,7 @@ export default function HomePage() {
           {/* Vibecoding */}
           <div className="bg-white rounded-2xl overflow-hidden border border-[#E8DDD6] hover:border-[#1C2B3A]/30 transition-colors flex flex-col">
             <div className="h-52 bg-[#EBE5E0] flex items-center justify-center">
-              <Image src="/vibecoding-course.png" alt="Vibecoding Course" width={180} height={180} className="object-contain" />
+              <Image src="/vibecoding-course.png" alt="Vibecoding Course" width={180} height={180} sizes="180px" loading="lazy" className="object-contain" />
             </div>
             <div className="p-7 flex flex-col flex-1">
               <div className="flex items-center gap-2 mb-3">
@@ -310,6 +315,8 @@ export default function HomePage() {
             alt="Advanced Python code written by a student at a CodeWithPurpose workshop"
             width={1200}
             height={224}
+            sizes="(max-width: 768px) 100vw, 1152px"
+            loading="lazy"
             className="w-full h-full object-cover object-center"
           />
         </div>
@@ -347,6 +354,8 @@ export default function HomePage() {
                 alt="Volunteer presenting CodeWithPurpose curriculum to students"
                 width={600}
                 height={400}
+                sizes="50vw"
+                loading="lazy"
                 className="w-full h-full object-cover opacity-70"
               />
             </div>
@@ -379,7 +388,7 @@ export default function HomePage() {
             </div>
             {/* Globe */}
             <div className="flex items-center justify-center">
-              <SpinningGlobe />
+              <GlobeWrapper />
             </div>
           </div>
         </div>
