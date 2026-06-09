@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, Linkedin } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 export default function AboutPage() {
   const team = [
@@ -47,7 +48,12 @@ export default function AboutPage() {
       <Navbar />
 
       {/* ── HERO ── */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-12 pb-16 lg:pt-20 lg:pb-24 relative">
+        <Mascot
+          src="/cwp_mascots/m2.png"
+          size={150}
+          className="absolute right-6 lg:right-8 top-16 lg:top-20 w-32 lg:w-40 hidden md:block rotate-3"
+        />
         <p className="italic text-[#1C2B3A]/55 text-sm mb-5">Our Story</p>
         <h1 className="font-serif text-[clamp(2.8rem,6vw,5rem)] leading-[1.1] text-[#1C2B3A] max-w-2xl mb-8">
           We're just students who got frustrated

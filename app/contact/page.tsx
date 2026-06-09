@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Mail, Users, Megaphone } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 const channels = [
   {
@@ -38,7 +39,12 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-12">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-12 relative">
+        <Mascot
+          src="/cwp_mascots/m4.png"
+          size={120}
+          className="absolute right-6 lg:right-16 top-20 w-24 lg:w-28 hidden sm:block rotate-6"
+        />
         <p className="italic text-[#1C2B3A]/50 text-sm mb-3">Get in touch</p>
         <h1 className="font-serif text-[clamp(2.6rem,5.5vw,4rem)] leading-[1.1] text-[#1C2B3A] mb-5 max-w-2xl">
           We&apos;re real people.<br />Let&apos;s talk.

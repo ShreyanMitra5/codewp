@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 export default function BlogPage() {
   return (
@@ -50,7 +51,12 @@ export default function BlogPage() {
         </div>
 
         {/* Right — why we write */}
-        <div className="space-y-8 pt-2">
+        <div className="space-y-8 pt-2 relative">
+          <Mascot
+            src="/cwp_mascots/m8.png"
+            size={115}
+            className="absolute -right-4 lg:-right-8 -top-4 w-24 lg:w-28 hidden sm:block rotate-3"
+          />
           <p className="text-xs uppercase tracking-[0.15em] text-[#1C2B3A]/40">What we write about</p>
           {[
             {

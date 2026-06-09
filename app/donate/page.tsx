@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, ShieldCheck, Globe, Zap } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 const whys = [
   {
@@ -26,7 +27,12 @@ export default function DonatePage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-12">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-12 relative">
+        <Mascot
+          src="/cwp_mascots/m5.png"
+          size={135}
+          className="absolute right-4 lg:right-12 top-24 w-28 lg:w-32 hidden md:block -rotate-3"
+        />
         <p className="italic text-[#1C2B3A]/50 text-sm mb-3">Support free education</p>
         <h1 className="font-serif text-[clamp(2.4rem,5vw,3.8rem)] leading-[1.1] text-[#1C2B3A] mb-4 max-w-2xl">
           Education is a right,<br />not a privilege.

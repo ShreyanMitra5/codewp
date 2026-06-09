@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { BookOpen, Globe, Users } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 const roles = [
   {
@@ -53,7 +54,12 @@ export default function JoinPage() {
       <div className="border-t border-[#E8DDD6]" />
 
       {/* Who we are */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-14 relative">
+        <Mascot
+          src="/cwp_mascots/m6.png"
+          size={110}
+          className="absolute right-6 lg:right-10 top-8 w-24 lg:w-28 hidden sm:block rotate-12"
+        />
         <h2 className="font-serif text-[clamp(1.6rem,3vw,2.2rem)] text-[#1C2B3A] mb-8">Meet the founders</h2>
         <div className="grid sm:grid-cols-2 gap-6 mb-16 max-w-xl">
           {team.map((member) => (

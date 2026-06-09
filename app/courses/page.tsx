@@ -2,6 +2,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Clock, Users, Award } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 const courses = [
   {
@@ -102,7 +103,12 @@ export default function CoursesPage() {
       <Navbar />
 
       {/* Hero */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-10">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-14 pb-10 relative">
+        <Mascot
+          src="/cwp_mascots/m3.png"
+          size={130}
+          className="absolute right-8 lg:right-12 bottom-0 w-28 lg:w-32 hidden md:block -rotate-12"
+        />
         <p className="italic text-[#1C2B3A]/50 text-sm mb-3">Free · Self-paced · Forever</p>
         <h1 className="font-serif text-[clamp(2.4rem,5vw,3.8rem)] leading-[1.1] text-[#1C2B3A] mb-4 max-w-2xl">
           Courses built for the curious

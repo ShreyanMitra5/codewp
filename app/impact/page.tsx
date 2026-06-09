@@ -2,6 +2,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight, ExternalLink } from "lucide-react"
 import { Navbar } from "@/components/navbar"
+import { Mascot } from "@/components/mascot"
 
 const stats = [
   { number: "2,000+", label: "Students", sub: "Taught worldwide" },
@@ -35,7 +36,12 @@ export default function ImpactPage() {
       <div className="border-t border-[#E8DDD6]" />
 
       {/* 3 Stats */}
-      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16">
+      <section className="max-w-6xl mx-auto px-6 lg:px-8 py-16 relative">
+        <Mascot
+          src="/cwp_mascots/m7.png"
+          size={125}
+          className="absolute -right-2 lg:right-4 top-1/2 -translate-y-1/2 w-24 lg:w-32 hidden lg:block -rotate-6 z-10"
+        />
         <div className="grid grid-cols-3 gap-px bg-[#E8DDD6] rounded-2xl overflow-hidden">
           {stats.map((s) => (
             <div key={s.label} className="bg-[#FDF4EE] p-10 flex flex-col">

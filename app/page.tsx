@@ -3,6 +3,7 @@ import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Navbar } from "@/components/navbar"
 import { GlobeWrapper } from "@/components/globe-wrapper"
+import { Mascot } from "@/components/mascot"
 
 export default function HomePage() {
   return (
@@ -13,7 +14,7 @@ export default function HomePage() {
       <section className="max-w-6xl mx-auto px-6 lg:px-8 pt-10 pb-12">
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           {/* Left — text */}
-          <div>
+          <div className="relative">
             <p className="italic text-[#1C2B3A]/55 text-sm mb-5">
               Free Education for Collective Change
             </p>
@@ -38,6 +39,11 @@ export default function HomePage() {
                 Our Story
               </Link>
             </div>
+            <Mascot
+              src="/cwp_mascots/m1.png"
+              size={140}
+              className="absolute -right-2 lg:-right-16 -bottom-10 lg:-bottom-6 w-28 lg:w-36 hidden sm:block -rotate-6"
+            />
           </div>
           {/* Right — tall hero photo */}
           <div className="rounded-2xl overflow-hidden h-[480px] lg:h-[580px] bg-[#E0D8D0]">
